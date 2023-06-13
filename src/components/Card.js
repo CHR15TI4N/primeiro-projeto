@@ -1,11 +1,13 @@
 import './Card.css';
 
-const Card = () => {
-    return (
-        <div className='cardContainer'>
-            <p>Meu primerio componente em React</p>
-        </div>
+const Card = ({text, bgColor, contador}) => {
 
+    return (
+        <div className='cardContainer' style={{backgroundColor: bgColor}}>
+            <p>{text}</p>
+            <h3>{contador}</h3>
+
+        </div>
     );
 }
 

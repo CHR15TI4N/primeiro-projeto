@@ -1,12 +1,37 @@
+import { useState } from 'react';
 import './App.css';
-import Card from './components/card';
+import Card from './components/Card';
+import List from './components/List';
 
+const list1 = ["Primeiro item", "Segundo item", "Terceiro item", "Quanto item"]
+const list2 = ["Banana", "Tomate"]
 
 const App = () => {
+
+  
+
+  const [contador, setContador] = useState(0);
+
+  const handleClick = () => {
+    setContador(contador + 1)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <Card/>
+        <List items={list1}/>
+        <List items={list2}/>
+        <Card 
+          text="Texto passado do App.js para o Card.js" 
+          bgColor="#f19"
+          contador={contador}
+        />
+        <Card 
+          text="Segundo texto escrito" 
+          bgColor="#f02"
+          contador={contador}
+        />
+        <button onClick={handleClick}>Soma + 1</button>
       </header>
     </div>
   );
