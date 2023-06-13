@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Card from './components/Card';
 import List from './components/List';
+import FormattedText from './components/FormattedText';
 
 const list1 = ["Primeiro item", "Segundo item", "Terceiro item", "Quanto item"]
 const list2 = ["Banana", "Tomate"]
@@ -21,6 +22,10 @@ const App = () => {
       <header className="App-header">
         <List items={list1}/>
         <List items={list2}/>
+
+        <FormattedText label={"Nome"} value={"Christian"}/>
+        <FormattedText label={"Idade"} value={19}/>
+        
         <Card 
           text="Texto passado do App.js para o Card.js" 
           bgColor="#f19"
